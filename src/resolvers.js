@@ -1,15 +1,14 @@
-import { Cat } from "./models/Cat";
+import { Task } from "./models/Task";
 
 export const resolvers = {
   Query: {
-    hello: () => "hi",
-    cats: () => Cat.find()
+    tasks: () => Task.find()
   },
   Mutation: {
-    createCat: async (_, { name }) => {
-      const kitty = new Cat({ name });
-      await kitty.save();
-      return kitty;
+    createTask: async (_, { name }) => {
+      const task = new Task({ name });
+      await task.save();
+      return task;
     }
   }
 };

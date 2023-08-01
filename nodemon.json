@@ -1,0 +1,7 @@
+{
+    "env": {
+        "MONGO_USER": "second_brain",
+        "MONGO_PASSWORD": "8dnHmS7RmGCl7PVg",
+        "MONGO_DB": "second-brain"
+    }
+}

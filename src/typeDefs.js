@@ -2,16 +2,15 @@ import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
   type Query {
-    hello: String!
-    cats: [Cat!]!
+    tasks: [Task!]!
   }
 
-  type Cat {
+  type Task {
     id: ID!
     name: String!
   }
 
   type Mutation {
-    createCat(name: String!): Cat!
+    createTask(name: String!): Task!
   }
 `;

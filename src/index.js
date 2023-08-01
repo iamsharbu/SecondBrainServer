@@ -14,12 +14,12 @@ const startServer = async () => {
 
   server.applyMiddleware({ app });
 
-  await mongoose.connect("mongodb://localhost:27017/test3", {
+  await mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.bmfr8.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`, {
     useNewUrlParser: true
   });
 
-  app.listen({ port: 4000 }, () =>
-    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+  app.listen({ port: 6969 }, () =>
+    console.log(`🚀 Server ready at http://localhost:6969${server.graphqlPath}`)
   );
 };
 
