@@ -19,7 +19,7 @@ const startServer = async () => {
     useNewUrlParser: true
   });
 
-  app.listen({ port: 6969 }, () =>
+  app.listen({ port: process.env.PORT || 6969 }, () =>
     console.log(`🚀 Server ready at http://localhost:6969${server.graphqlPath}`)
   );
 };
