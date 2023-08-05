@@ -21,6 +21,8 @@
     "dotenv": "^16.3.1",
     "express": "^4.16.4",
     "graphql": "^14.2.1",
-    "mongoose": "^5.5.1"
+    "mongoose": "^5.5.1",
+    "node-fetch": "^3.3.2",
+    "openai": "^3.3.0"
   }
 }

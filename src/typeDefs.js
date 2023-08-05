@@ -3,6 +3,11 @@ import { gql } from "apollo-server-express";
 export const typeDefs = gql`
   type Query {
     tasks: [Task!]!
+    askAI(prompt: String!): AIResponse!
+  }
+
+  type AIResponse {
+    response: String
   }
 
   type Task {
