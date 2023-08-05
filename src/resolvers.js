@@ -1,17 +1,17 @@
-import { Task } from "./models/Task";
-import {getAIResponse} from "./utils";
+import Task from './models/Task';
+import getAIResponse from './utils';
 
 const mongoose = require('mongoose');
 
-const ObjectId = mongoose.Types.ObjectId;
+const { ObjectId } = mongoose.Types;
 
-export const resolvers = {
+const resolvers = {
   Query: {
     tasks: () => Task.find(),
     askAI: async (_, { prompt }) => {
       const resp = await getAIResponse(prompt);
-      return {response: resp};
-    }
+      return { response: resp };
+    },
   },
   Mutation: {
     createTask: async (_, { name }) => {
@@ -20,8 +20,10 @@ export const resolvers = {
       return task;
     },
     deleteTask: async (_, { id }) => {
-      const task = await Task.findByIdAndDelete({_id: new ObjectId(id)});
+      const task = await Task.findByIdAndDelete({ _id: new ObjectId(id) });
       return task;
-    }
-  }
+    },
+  },
 };
+
+export default resolvers;

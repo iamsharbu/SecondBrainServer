@@ -1,3 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-export const Task = mongoose.model("Task", { name: String });
+const Task = mongoose.model('Task', { name: String });
+export default Task;

@@ -1,6 +1,6 @@
-import { gql } from "apollo-server-express";
+import { gql } from 'apollo-server-express';
 
-export const typeDefs = gql`
+const typeDefs = gql`
   type Query {
     tasks: [Task!]!
     askAI(prompt: String!): AIResponse!
@@ -20,3 +20,5 @@ export const typeDefs = gql`
     deleteTask(id: ID!): Task!
   }
 `;
+
+export default typeDefs;
